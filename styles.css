@@ -10,8 +10,38 @@ body {
 .calculator {
     display: flex;
     padding: 30px;
-    background-color: rgba(255, 255, 255, 0.436);
+    background-color: rgba(255, 255, 255, 0.173);
+    height: 400px;
+    width: 300px;
     border-radius: 25px;
+}
+
+.btn {
+    outline: none;
+    border-radius: 25px;
+    background-color: #000000;
+    box-shadow: 0 4px 0 rgb(99, 99, 99);
+    padding: 10px;
+    margin: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: white;
+    min-width: 20px;
+    font-size: 20px;
+}
+
+.btn:hover {
+    background-color: #000000;
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 rgb(105, 105, 105);
+}
+
+.btn:active {
+    transform: translate(4px);
+}
+
+.buttons {
+    align-self: flex-end;
+    flex: 1;
 }
 
 .row {
