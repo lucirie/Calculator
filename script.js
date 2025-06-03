@@ -15,11 +15,12 @@ let numberSecond = 0;
 let operator = "";
 
 const buttons = document.querySelectorAll(".btn");
+const display = document.querySelector(".display")
 
 buttons.forEach((btn) => {
     btn.addEventListener('click', (e) => {
         let value = e.currentTarget.innerText;
-        console.log(value)
+        display.innerText = value
     })
 })
 

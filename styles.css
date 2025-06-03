@@ -14,6 +14,8 @@ body {
     height: 400px;
     width: 300px;
     border-radius: 25px;
+    flex-direction: column;
+    gap: 25px;
 }
 
 .btn {
@@ -40,7 +42,6 @@ body {
 }
 
 .buttons {
-    align-self: flex-end;
     flex: 1;
 }
 
@@ -51,4 +52,26 @@ body {
 
 .btn {
     flex: 1;
+}
+
+.display {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    align-self: center;
+    background-color: #000000;
+    color: white;
+    padding: 20px;
+    font-size: 70px;
+    text-align: end;
+    font-family: 'digital';
+}
+
+@font-face {
+    font-family: 'digital';
+    src: url('digital-7.ttf') format('truetype');
 }
