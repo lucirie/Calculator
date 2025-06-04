@@ -1,9 +1,15 @@
+const buttons = document.querySelectorAll(".btn");
+const operators = document.querySelectorAll(".operator");
+const display = document.querySelector(".display");
+
 function add(a, b) {return a + b}
 function subtract(a, b) {return a - b}
 function multiply(a, b) {return a * b}
 function devide(a, b) {return a / b}
 
 function operate(a, sign, b) {
+    a = parseFloat(a);
+    b = parseFloat(b);
     if (sign == "+") {return add(a, b)}
     else if (sign == "-") {return subtract(a, b)}
     else if (sign == "*") {return multiply(a, b)}
@@ -14,13 +20,24 @@ let numberFirst = 0;
 let numberSecond = 0;
 let operator = "";
 
-const buttons = document.querySelectorAll(".btn");
-const display = document.querySelector(".display")
 
 buttons.forEach((btn) => {
     btn.addEventListener('click', (e) => {
-        let value = e.currentTarget.innerText;
-        display.innerText = value
+        display.innerText += e.currentTarget.innerText;
+        if (operator != "") {
+            numberSecond = e.currentTarget.innerText;
+            numberFirst = operate(numberFirst, operator, numberSecond)
+            operator = "";
+            display.innerText = numberFirst;
+        }
+        else if (e.currentTarget.innerText == "AC") {display.innerText=""; numberFirst=0; numberSecond=0}
+    })
+})
+
+operators.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+        numberFirst = display.innerText;
+        operator = e.currentTarget.innerText;
     })
 })
 
