@@ -18,7 +18,7 @@ body {
     gap: 25px;
 }
 
-.btn, .operator {
+.btn, .operator, .modifier {
     outline: none;
     border-radius: 25px;
     background-color: #000000;
@@ -32,13 +32,13 @@ body {
     flex: 1;
 }
 
-.btn:hover, .operator:hover {
+.btn:hover, .operator:hover, .modifier:hover {
     background-color: #000000;
     transform: translateY(2px);
     box-shadow: 0 2px 0 rgb(105, 105, 105);
 }
 
-.btn:active, .operator:hover {
+.btn:active, .operator:hover, .modifier:hover {
     transform: translate(4px);
 }
 
