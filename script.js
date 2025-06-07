@@ -33,7 +33,16 @@ buttons.forEach((btn) => {
 operators.forEach((btn) => {
     btn.addEventListener("click", (e) => {
         let value = e.currentTarget.innerText;
-        if (previousInput == "") {
+
+        // Needs debugging, gives "undefined"
+        if (value == "=" && currentInput != "" && previousInput != "") {
+            output = operate(parseFloat(previousInput), operator, parseFloat(currentInput));
+            currentInput = output;
+            display.innerText = currentInput;
+            previousInput = "";
+            operator = "";
+        }
+        else if (previousInput == "") {
             previousInput = currentInput;
             operator = value;
             currentInput = "";
